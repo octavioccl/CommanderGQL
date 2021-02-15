@@ -11,7 +11,7 @@ namespace CommanderGQL.GraphQL.Platforms
         protected override void Configure(IObjectTypeDescriptor<Platform> descriptor)
         {
             descriptor.Description("Represent any Software or Service that has a command line insterface");
-            descriptor.Field(p=>p.LicenseKey).Ignore();
+            //descriptor.Field(p=>p.LicenseKey).Ignore();
 
             descriptor.Field(p=>p.Commands)
                       .ResolveWith<Resolvers>(p=>p.GetCommands(default!, default!))
