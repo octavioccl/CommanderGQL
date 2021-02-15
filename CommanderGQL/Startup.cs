@@ -33,6 +33,7 @@ namespace CommanderGQL
             services.AddPooledDbContextFactory<AppDbContext>(opt=> opt.UseSqlServer(Configuration.GetConnectionString("CommandConStr")));
             services.AddGraphQLServer()
                     .AddQueryType<Query>()
+                    .AddMutationType<Mutations>()
                     .AddType<PlatformType>()
                      .AddType<CommandType>()
                      .AddFiltering()
